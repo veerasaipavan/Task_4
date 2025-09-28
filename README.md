@@ -108,11 +108,7 @@ INNER JOIN rentals r ON c.customer_id = r.customer_id
 GROUP BY c.customer_id, c.first_name, c.last_name
 HAVING total_rentals > 1;
 
-
-
----
 ### 4️⃣ Films with rental rate above average
-```sql
 SELECT title, rental_rate
 FROM films
 WHERE rental_rate > (SELECT AVG(rental_rate) FROM films);
@@ -137,7 +133,7 @@ SELECT * FROM rental_report_view WHERE rental_rate >= 4.99;
 ### 7️⃣ Indexing for performance
 
 CREATE INDEX idx_customer_lastname ON customers (last_name);
-
+---
 
 ```
 
